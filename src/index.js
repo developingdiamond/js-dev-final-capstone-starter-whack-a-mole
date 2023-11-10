@@ -39,16 +39,7 @@ function stop (){
   stopAudio(song)
 }
 
- function cursorAnimation() {
-   let body = document.getElementsByTagName("body")[0];
 
-  body.style.cursor= "url('https://github.com/gabrielsanchez/erddiagram/blob/main/assets/mallet.png'), auto";
- 
-  setTimeout(() => {
-   body.style.cursor = "url('https://github.com/gabrielsanchez/erddiagram/blob/main/assets/mallet.png'), auto";
- 
-  }, 300);
- };
 
 
  
@@ -266,7 +257,7 @@ function startTimer() {
 */
 function whack(event) {
   // TODO: Write your code here.
-  cursorAnimation();
+ 
   console.log("whack!")
   updateScore();
   playAudio(audioHit);
