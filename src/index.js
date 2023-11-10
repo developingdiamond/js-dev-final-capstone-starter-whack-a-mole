@@ -163,11 +163,11 @@ function showUp() {
 function showAndHide(hole, delay){
   // TODO: call the toggleVisibility function so that it adds the 'show' class.
   toggleVisibility(hole);
-  console.log('whackagle ${whackagle}');
+  
   const timeoutID = setTimeout(() => {
     // TODO: call the toggleVisibility function so that it removes the 'show' class when the timer times out.
      toggleVisibility(hole);
-     console.log('hide');
+    
     gameOver();
   }, 0); // TODO: change the setTimeout delay to the one provided as a parameter
   return timeoutID;
