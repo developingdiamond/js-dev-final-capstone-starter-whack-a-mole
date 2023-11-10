@@ -98,12 +98,15 @@ function chooseHole(holes) {
 */
 function gameOver() {
   //TODO: Write your code here
-        if time > 0:
-*       timeoutId = showUp()
-*       return timeoutId
-*       else
-*       gameStopped = stopGame()
-*       return gameStopped
+  if (time > 0) {
+    timeoutId = showUp()
+    return timeoutId
+  }
+
+  else {
+    gameStopped = stopGame()
+    return gameStopped
+  }
 }
 
 /**
@@ -116,8 +119,8 @@ function gameOver() {
 *
 */
 function showUp() {
-  let delay = setDelay(); // TODO: Update so that it uses setDelay()
-  const hole = chooseHole();  // TODO: Update so that it use chooseHole()
+  let delay = setDelay(difficulty); // TODO: Update so that it uses setDelay()
+  const hole = chooseHole(holes);  // TODO: Update so that it use chooseHole()
   return showAndHide(hole, delay);
 }
 
@@ -189,9 +192,7 @@ function clearScore() {
 *
 */
 function updateTimer() {
-  // TODO: Write your code here.
-  // hint: this code is provided to you in the instructions.
-    if (time > 0){
+  if (time > 0){
     time -= 1;
     timerDisplay.textContent = time;
   }
@@ -220,7 +221,7 @@ function startTimer() {
 */
 function whack(event) {
   // TODO: Write your code here.
-  return "whack!"
+  console.log("whack!")
   updateScore()
   return points;
 }
@@ -268,8 +269,11 @@ function stopGame(){
 *
 */
 function startGame(){
-  setDuration(10);
+  setDuration(20);
   showUp();
+  startTimer();
+  clearScore();
+  setEventListeners();
   return "game started";
 }
 
