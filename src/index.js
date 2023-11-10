@@ -65,17 +65,9 @@ function randomInteger(min, max) {
  */
 function setDelay(difficulty) {
   // TODO: Write your code here.
-  if (difficulty === "easy" ){ 
-    return 1500; }
- else if (difficulty === "normal" ){
-   return 1000;
- }
- else if (difficulty === "hard") { 
-   return randomInteger(600, 1200);  
- } 
- else {
-   return 1500;
- }
+  if (difficulty === 'easy') { return 1500 }
+  if (difficulty === 'normal') { return 1000 }
+  if (difficulty === 'hard') { return randomInteger(600, 1200) }
 }
 
 /**
@@ -94,12 +86,12 @@ function setDelay(difficulty) {
  */
 function chooseHole(holes) {
   // TODO: Write your code here.
-  const index = randomInteger(0, 8)
-  const hole = holes[index]
+  const index = randomInteger(0, 8);
+  const hole = holes[index];
   if (hole === lastHole) { return chooseHole(holes) }
   else {
-    lastHole = hole
-    return hole
+    lastHole = hole;
+    return hole;
   }
 }
 
@@ -222,7 +214,7 @@ function clearScore() {
 function updateTimer() {
   // TODO: Write your code here.
   // hint: this code is provided to you in the instructions.
-  if (time > 0){
+    if (time > 0){
     time -= 1;
     timerDisplay.textContent = time;
   }
