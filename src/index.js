@@ -267,6 +267,7 @@ moles.forEach(
   );
   return moles;
 }
+setEventListeners();
 
 /**
 *
