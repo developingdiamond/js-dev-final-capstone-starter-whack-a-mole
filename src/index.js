@@ -11,34 +11,10 @@ let lastHole = 0;
 let points = 0;
 let difficulty = "hard";
 
-function playAudio(audioObject) {
-  audioObject.play();
-}
-
-function loopAudio(audioObject) {
-  audioObject.loop = true;
-  playAudio(audioObject);
-}
-
-function stopAudio(audioObject) {
-  audioObject.pause();
-}
-
-function play(){
-  playAudio(audioObject);
-}
-function playHit(){
-  playAudio(audioHit);
-}
-
-function stop (){
-  stopAudio(audioObject);
-}
-
 /**
  * Generates a random integer within a range.
  *
- * The function takes two values as parameters that limits the range
+ * The function takes two values as parameters that limits the range 
  * of the number to be generated. For example, calling randomInteger(0,10)
  * will return a random integer between 0 and 10. Calling randomInteger(10,200)
  * will return a random integer between 10 and 200.
@@ -57,7 +33,7 @@ function randomInteger(min, max) {
  * return 1000. If difficulty is set to "hard" it should return a randomInteger between
  * 600 and 1200.
  *
- * Example:
+ * Example: 
  * setDelay("easy") //> returns 1500
  * setDelay("normal") //> returns 1000
  * setDelay("hard") //> returns 856 (returns a random number between 600 and 1200).
@@ -65,7 +41,7 @@ function randomInteger(min, max) {
  */
 function setDelay(difficulty) {
   // TODO: Write your code here.
-  if (difficulty === "easy") {
+if (difficulty === "easy") {
     return 1500;
   
 } else if (difficulty === "medium") {
@@ -75,8 +51,6 @@ function setDelay(difficulty) {
     return randomInteger(600,1200);  
   }
 }
-
-
 /**
  * Chooses a random hole from a list of holes.
  *
@@ -84,22 +58,22 @@ function setDelay(difficulty) {
  * 1. generate a random integer from 0 to 8 and assign it to an index variable
  * 2. get a random hole with the random index (e.g. const hole = holes[index])
  * 3. if hole === lastHole then call chooseHole(holes) again.
- * 4. if hole is not the same as the lastHole then keep track of
+ * 4. if hole is not the same as the lastHole then keep track of 
  * it (lastHole = hole) and return the hole
  *
- * Example:
+ * Example: 
  * const holes = document.querySelectorAll('.hole');
  * chooseHole(holes) //> returns one of the 9 holes that you defined
  */
 function chooseHole(holes) {
   // TODO: Write your code here.
-  const index = randomInteger(0, 8);
+ const index = randomInteger(0, 8);
   const hole = holes[index];
-  if (hole === lastHole) { return chooseHole(holes) }
-  else {
-    lastHole = hole;
-    return hole;
+  if (hole === lastHole) {
+    return chooseHole(holes);
   }
+  lastHole = hole;
+  return hole;
 }
 
 /**
@@ -124,16 +98,12 @@ function chooseHole(holes) {
 */
 function gameOver() {
   //TODO: Write your code here
-  if (time > 0) {
-    // If there is still time, call showUp() again to continue the game.
-    let timeoutID = showUp();
-    return timeoutID;
-  } else {
-    // If there is no more time, call stopGame() to end the game.
-    let gameStopped = stopGame();
-
-    return gameStopped;
-  }
+        if time > 0:
+*       timeoutId = showUp()
+*       return timeoutId
+*       else
+*       gameStopped = stopGame()
+*       return gameStopped
 }
 
 /**
@@ -146,8 +116,8 @@ function gameOver() {
 *
 */
 function showUp() {
-  let delay = setDelay('easy'); // TODO: Update so that it uses setDelay()
-  const hole = chooseHole(holes);  // TODO: Update so that it use chooseHole()
+  let delay = setDelay(); // TODO: Update so that it uses setDelay()
+  const hole = chooseHole();  // TODO: Update so that it use chooseHole()
   return showAndHide(hole, delay);
 }
 
@@ -166,19 +136,19 @@ function showAndHide(hole, delay){
     // TODO: call the toggleVisibility function so that it removes the 'show' class when the timer times out.
      toggleVisibility(hole);
     gameOver();
-  }, delay); // TODO: change the setTimeout delay to the one provided as a parameter
+  }, 0); // TODO: change the setTimeout delay to the one provided as a parameter
   return timeoutID;
 }
 
 /**
 *
-* Adds or removes the 'show' class that is defined in styles.css to
+* Adds or removes the 'show' class that is defined in styles.css to 
 * a given hole. It returns the hole.
 *
 */
 function toggleVisibility(hole){
   // TODO: add hole.classList.toggle so that it adds or removes the 'show' class.
-hole.classList.toggle('show');
+hole.classList.toggle("show");
   return hole;
 }
 
@@ -187,8 +157,8 @@ hole.classList.toggle('show');
 * This function increments the points global variable and updates the scoreboard.
 * Use the `points` global variable that is already defined and increment it by 1.
 * After the `points` variable is incremented proceed by updating the scoreboard
-* that you defined in the `index.html` file. To update the scoreboard you can use
-* `score.textContent = points;`. Use the comments in the function as a guide
+* that you defined in the `index.html` file. To update the scoreboard you can use 
+* `score.textContent = points;`. Use the comments in the function as a guide 
 * for your implementation:
 *
 */
@@ -226,7 +196,6 @@ function updateTimer() {
     timerDisplay.textContent = time;
   }
   return time;
-
 }
 
 /**
@@ -251,9 +220,8 @@ function startTimer() {
 */
 function whack(event) {
   // TODO: Write your code here.
-  console.log("wack!")
-  updateScore();
-  playAudio(audioHit);
+  return "whack!"
+  updateScore()
   return points;
 }
 
@@ -269,7 +237,6 @@ moles.forEach(
   );
   return moles;
 }
-setEventListeners();
 
 /**
 *
@@ -301,12 +268,8 @@ function stopGame(){
 *
 */
 function startGame(){
-  loopAudio(audioObject);
-  setDuration(20);
+  setDuration(10);
   showUp();
-  startTimer();
-  clearScore();
-  setEventListeners();
   return "game started";
 }
 
