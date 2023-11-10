@@ -250,7 +250,8 @@ function startTimer() {
 function whack(event) {
   // TODO: Write your code here.
   console.log("whack!")
-  updateScore()
+  updateScore();
+  playAudio(audioHit);
   return points;
 }
 
