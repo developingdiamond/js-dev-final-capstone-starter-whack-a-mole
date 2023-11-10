@@ -44,7 +44,7 @@ function setDelay(difficulty) {
 if (difficulty === "easy") {
     return 1500;
   
-} else if (difficulty === "medium") {
+} else if (difficulty === "normal") {
     return 1000;
     
 } else if (difficulty === "hard") {
