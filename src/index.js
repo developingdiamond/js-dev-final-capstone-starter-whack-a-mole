@@ -39,20 +39,7 @@ function stop (){
   stopAudio(song)
 }
 
- function cursorAnimation() {
-   let body = document.getElementsByTagName("body")[0];
-
-  body.style.cursor= "url('https://raw.githubusercontent.com/developingdiamond/whack-a-mole/blob/assets/mallet.png'), auto";
  
-  setTimeout(() => {
-   body.style.cursor = "url('https://raw.githubusercontent.com/developingdiamond/whack-a-mole/blob/assets/mallet.png'), auto";
- 
-  }, 300);
- };
-
-
-
-
 /**
  * Generates a random integer within a range.
  *
