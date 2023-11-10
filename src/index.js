@@ -25,14 +25,14 @@ function stopAudio(audioObject) {
 }
 
 function play(){
-  playAudio(molesong);
+  playAudio(audioObject);
 }
 function playHit(){
   playAudio(audioHit);
 }
 
 function stop (){
-  stopAudio(molesong);
+  stopAudio(audioObject);
 }
 
 /**
@@ -295,7 +295,7 @@ function stopGame(){
 *
 */
 function startGame(){
-  loopAudio(molesong);
+  loopAudio(audioObject);
   setDuration(timer);
   showUp();
   startTimer();
