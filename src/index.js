@@ -65,9 +65,17 @@ function randomInteger(min, max) {
  */
 function setDelay(difficulty) {
   // TODO: Write your code here.
-  if (difficulty === 'easy') { return 1500 }
-  if (difficulty === 'normal') { return 1000 }
-  if (difficulty === 'hard') { return randomInteger(600, 1200) }
+  if (difficulty === "easy" ){ 
+     return 1500; }
+  else if (difficulty === "normal" ){
+    return 1000;
+  }
+  else if (difficulty === "hard") { 
+    return randomInteger(600, 1200);  
+  } 
+  else {
+    return 1500;
+  }
 }
 
 /**
@@ -86,12 +94,12 @@ function setDelay(difficulty) {
  */
 function chooseHole(holes) {
   // TODO: Write your code here.
-  const index = randomInteger(0, 8)
-  const hole = holes[index]
+  const index = randomInteger(0, 8);
+  const hole = holes[index];
   if (hole === lastHole) { return chooseHole(holes) }
   else {
-    lastHole = hole
-    return hole
+    lastHole = hole;
+    return hole;
   }
 }
 
@@ -118,13 +126,14 @@ function chooseHole(holes) {
 function gameOver() {
   //TODO: Write your code here
   if (time > 0) {
-    timeoutId = showUp()
-    return timeoutId
-  }
+    // If there is still time, call showUp() again to continue the game.
+    let timeoutID = showUp();
+    return timeoutID;
+  } else {
+    // If there is no more time, call stopGame() to end the game.
+    let gameStopped = stopGame();
 
-  else {
-    gameStopped = stopGame()
-    return gameStopped
+    return gameStopped;
   }
 }
 
@@ -138,7 +147,7 @@ function gameOver() {
 *
 */
 function showUp() {
-  let delay = setDelay(difficulty); // TODO: Update so that it uses setDelay()
+  let delay = setDelay('easy'); // TODO: Update so that it uses setDelay()
   const hole = chooseHole(holes);  // TODO: Update so that it use chooseHole()
   return showAndHide(hole, delay);
 }
@@ -170,7 +179,7 @@ function showAndHide(hole, delay){
 */
 function toggleVisibility(hole){
   // TODO: add hole.classList.toggle so that it adds or removes the 'show' class.
-hole.classList.toggle("show");
+hole.classList.toggle('show');
   return hole;
 }
 
@@ -213,14 +222,12 @@ function clearScore() {
 function updateTimer() {
   // TODO: Write your code here.
   // hint: this code is provided to you in the instructions.
-    if (time > 0){
+      if (time > 0){
     time -= 1;
-    timer += 1;
     timerDisplay.textContent = time;
-    console.log("timer",timer)
-  console.log("time",time)
   }
   return time;
+
 }
 
 /**
@@ -296,7 +303,7 @@ function stopGame(){
 */
 function startGame(){
   loopAudio(audioObject);
-  setDuration(timer);
+  setDuration(20);
   showUp();
   startTimer();
   clearScore();
