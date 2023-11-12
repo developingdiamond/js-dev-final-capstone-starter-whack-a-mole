@@ -130,6 +130,7 @@ function chooseHole(holes) {
 */
 
 function gameOver() {
+  //ToDo:write your code here
   if(time > 0){
     let timeoutId = showUp();
     return timeoutId;
