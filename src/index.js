@@ -39,6 +39,10 @@ function stop (){
   stopAudio(song)
 }
 
+
+
+
+ 
 /**
  * Generates a random integer within a range.
  *
@@ -169,7 +173,7 @@ function showAndHide(hole, delay){
      toggleVisibility(hole);
     
     gameOver();
-  }, 0); // TODO: change the setTimeout delay to the one provided as a parameter
+  }, delay); // TODO: change the setTimeout delay to the one provided as a parameter
   return timeoutID;
 }
 
@@ -184,6 +188,8 @@ function toggleVisibility(hole){
 hole.classList.toggle('show');
   return hole;
 }
+
+showUp();
 
 /**
 *
@@ -251,6 +257,7 @@ function startTimer() {
 */
 function whack(event) {
   // TODO: Write your code here.
+ 
   console.log("whack!")
   updateScore();
   playAudio(audioHit);
@@ -289,7 +296,7 @@ function setDuration(duration) {
 *
 */
 function stopGame(){
-  // stopAudio(song);  //optional
+  stopAudio(song);  
   clearInterval(timer);
   return "game stopped";
 }
@@ -311,6 +318,7 @@ function startGame(){
 }
 
 startButton.addEventListener("click", startGame);
+
 
 
 // Please do not modify the code below.
