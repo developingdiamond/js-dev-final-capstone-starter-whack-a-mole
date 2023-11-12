@@ -131,13 +131,13 @@ function chooseHole(holes) {
 function gameOver() {
   //TODO: Write your code here
   if (time > 0) {
-    timeoutId = showUp();
-    return timeoutId
+    let timeoutId = showUp();
+    return timeoutId;
   }
 
   else {
-    gameStopped = stopGame();
-    return gameStopped
+    let gameStopped = stopGame();
+    return gameStopped;
   }
 }
 
