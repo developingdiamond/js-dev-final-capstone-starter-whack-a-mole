@@ -108,9 +108,7 @@ function chooseHole(holes) {
   return hole;
 }
 
-function setDelay(difficulty){
-  return 1000;
-}
+
 
 /**
 *
