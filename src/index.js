@@ -176,7 +176,7 @@ function showAndHide(hole, delay){
      toggleVisibility(hole);
     
     gameOver();
-  }, 0); // TODO: change the setTimeout delay to the one provided as a parameter
+  }, delay); // TODO: change the setTimeout delay to the one provided as a parameter
   return timeoutID;
 }
 
@@ -312,7 +312,7 @@ function stopGame(){
 */
 function startGame(){
   play();
-  setDuration(20);
+  setDuration(10);
   showUp();
   startTimer();
   clearScore();
