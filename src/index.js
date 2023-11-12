@@ -108,6 +108,10 @@ function chooseHole(holes) {
   return hole;
 }
 
+function setDelay(difficulty){
+  return 1000;
+}
+
 /**
 *
 * Calls the showUp function if time > 0 and stops the game if time = 0.
