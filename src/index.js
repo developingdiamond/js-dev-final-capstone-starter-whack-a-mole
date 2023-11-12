@@ -314,7 +314,7 @@ function stopGame(){
 */
 function startGame(){
   play();
-  setDuration(10);
+  setDuration(20);
   showUp();
   startTimer();
   clearScore();
