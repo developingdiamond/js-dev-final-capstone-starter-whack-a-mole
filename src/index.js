@@ -130,7 +130,7 @@ function chooseHole(holes) {
 */
 
 function gameOver() {
-  //ToDo:write your code here
+  // TODO: Write your code here
   if(time > 0){
     let timeoutId = showUp();
     return timeoutId;
@@ -138,6 +138,11 @@ function gameOver() {
     let gameStopped = stopGame();
     return gameStopped;
   }
+
+}
+
+function setDelay(difficulty){
+  return 1000;
 }
 
 /**
@@ -309,7 +314,6 @@ function stopGame(){
 function startGame(){
   play();
   setDuration(10);
-  moles.forEach(hole => hole.classList.remove('show'));
   showUp();
   startTimer();
   clearScore();
