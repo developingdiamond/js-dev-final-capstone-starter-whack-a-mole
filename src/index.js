@@ -151,8 +151,8 @@ function gameOver() {
 *
 */
 function showUp() {
-  let delay = setDelay(difficulty); // TODO: Update so that it uses setDelay()
-  const hole = chooseHole(holes);  // TODO: Update so that it use chooseHole()
+  let delay = setDelay(0); // TODO: Update so that it uses setDelay()
+  const hole = chooseHole(0);  // TODO: Update so that it use chooseHole()
   return showAndHide(hole, delay);
 }
 
