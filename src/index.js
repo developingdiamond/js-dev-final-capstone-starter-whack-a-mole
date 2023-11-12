@@ -173,7 +173,7 @@ function showAndHide(hole, delay){
      toggleVisibility(hole);
     
     gameOver();
-  }, delay); // TODO: change the setTimeout delay to the one provided as a parameter
+  }, 0); // TODO: change the setTimeout delay to the one provided as a parameter
   return timeoutID;
 }
 
