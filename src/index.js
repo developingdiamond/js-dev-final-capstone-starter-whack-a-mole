@@ -310,10 +310,6 @@ function stopGame(){
 *
 */
 function startGame(){
-  if(time > 0){
-    let timeoutId = showUp();
-    return timeoutId;
-  }
   play();
   setDuration(10);
   showUp();
