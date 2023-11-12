@@ -309,6 +309,7 @@ function stopGame(){
 function startGame(){
   play();
   setDuration(10);
+  moles.forEach(hole => hole.classList.remove('show'));
   showUp();
   startTimer();
   clearScore();
