@@ -141,9 +141,7 @@ function gameOver() {
 
 }
 
-function setDelay(difficulty){
-  return 1000;
-}
+
 
 /**
 *
