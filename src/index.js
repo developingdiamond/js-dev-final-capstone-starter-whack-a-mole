@@ -39,7 +39,16 @@ function stop (){
   stopAudio(song)
 }
 
+function cursorAnimation() {
+  let body = document.getElementsByTagName("body")[0];
 
+ body.style.cursor= "url('https://github.com/developingdiamond/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/carrot.png'), auto";
+
+ setTimeout(() => {
+  body.style.cursor = "url('https://github.com/developingdiamond/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/carrot.png'), auto";
+
+ }, 300);
+};
 
 
  
