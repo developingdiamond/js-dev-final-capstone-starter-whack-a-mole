@@ -32,6 +32,7 @@ h2 {
 #start {
     text-align: center;
     font-size: 30px;
+    cursor: url('https://github.com/developingdiamond/js-dev-final-capstone-starter-whack-a-mole/blob/main/assets/carrot.png'), auto;
 }
 
 #timer{
